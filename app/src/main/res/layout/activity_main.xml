@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="8dp"
+    android:background="#E7E0CF">
+
+   <TextView
+       android:id="@+id/numberid"
+       style="@style/padding_and_marging"
+       android:textAppearance="?android:attr/textAppearanceLarge"
+       android:text="Number"
+       android:background="#F06292"/>
+
+    <TextView
+        android:id="@+id/familyid"
+        style="@style/padding_and_marging"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Family"
+        android:background="#69B36E"/>
+
+    <TextView
+        android:id="@+id/colorid"
+        style="@style/padding_and_marging"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Color"
+        android:background="#1E66A5"/>
+
+    <TextView
+        android:id="@+id/phaseid"
+        style="@style/padding_and_marging"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Phase"
+        android:background="#7FD520"/>
+
+
+</LinearLayout>
