@@ -1,51 +1,55 @@
 package com.example.langauge;
 
-import android.content.Intent;
+
+
+import android.net.Uri;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public  class MainActivity extends AppCompatActivity implements Numbers.OnFragmentInteractionListener,Family.OnFragmentInteractionListener,Colors.OnFragmentInteractionListener,Phrases.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView number = (TextView) findViewById(R.id.numberid) ;
-        number.setOnClickListener(new View.OnClickListener() {
+        TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout);
+        tabLayout.addTab(tabLayout.newTab().setText("NUMBER"));
+        tabLayout.addTab(tabLayout.newTab().setText("FAMILY"));
+        tabLayout.addTab(tabLayout.newTab().setText("COLORS"));
+        tabLayout.addTab(tabLayout.newTab().setText("PHRASES"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.viewpagerid);
+        final PagerAdapter adapter = new PagerAdapter(this,getSupportFragmentManager(),/*tabLayout.getTabCount()*/4);
+        viewPager.setAdapter(adapter);
+        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent numberIntent =new Intent(MainActivity.this,NumberActivity.class) ;
-                startActivity(numberIntent);
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
-        TextView  phase = (TextView) findViewById(R.id.phaseid) ;
-        phase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent phaseIntent =new Intent(MainActivity.this,PhaseActivity.class) ;
-                startActivity(phaseIntent);
-            }
-        });
+    }
 
-        TextView family = (TextView) findViewById(R.id.familyid) ;
-        family.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent familyIntent =new Intent(MainActivity.this,FamilyActivity.class) ;
-                startActivity(familyIntent);
-            }
-        });
 
-        TextView color = (TextView) findViewById(R.id.colorid) ;
-        color.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent colorIntent =new Intent(MainActivity.this,ColorActivity.class) ;
-                startActivity(colorIntent);
-            }
-        });
+
+
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

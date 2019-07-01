@@ -9,19 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ColorActivity">
-            android:label="Color"
-        </activity>
-        <activity android:name=".PhaseActivity"
-            android:label="Phase"/>
-        <activity android:name=".NumberActivity"
-            android:label="Number"/>
-        <activity android:name=".FamilyActivity"
-            android:label="Family"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

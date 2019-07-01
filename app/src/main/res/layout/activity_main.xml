@@ -5,37 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="8dp"
-    android:background="#E7E0CF">
+    android:background="#E2E9E3"
+    tools:context=".MainActivity">
 
-   <TextView
-       android:id="@+id/numberid"
-       style="@style/padding_and_marging"
-       android:textAppearance="?android:attr/textAppearanceLarge"
-       android:text="Number"
-       android:background="#F06292"/>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <TextView
-        android:id="@+id/familyid"
-        style="@style/padding_and_marging"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Family"
-        android:background="#69B36E"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Language APP"
+            android:textSize="20dp"/>
 
-    <TextView
-        android:id="@+id/colorid"
-        style="@style/padding_and_marging"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Color"
-        android:background="#1E66A5"/>
+    </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/phaseid"
-        style="@style/padding_and_marging"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Phase"
-        android:background="#7FD520"/>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        style="@style/CategoryTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagerid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
